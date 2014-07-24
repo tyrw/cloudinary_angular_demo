@@ -6,23 +6,6 @@
   </cl-image>
 </div>
 
-<h1>Welcome!</h1>
-
-<p>
-  This is the main demo page of the PhotoAlbum sample AngularJS application of Cloudinary.<br />
-  Here you can see all images you have uploaded to this application and find some information on how
-  to implement your own AngularJS application storing, manipulating and serving your photos using Cloudinary!
-</p>
-
-<p>
-  All of the images you see here are transformed and served by Cloudinary.
-  For instance, the logo and the poster frame.
-  They are both generated in the cloud using Cloudinary functions.
-  These two pictures weren't even have to be uploaded to Cloudinary, they are retrieved by the service, transformed, cached and distributed through a CDN.
-</p>
-
-<h1>Your Photos</h1>
-
 <div class="actions">
   <a class="upload_link" href="#/photos/new">Add photo</a>
 </div>
@@ -30,7 +13,7 @@
 <div class="photos">
   <p ng-if="photos.length === 0 || !photos">No photos were added yet.</p>
   <div class="photo" ng-repeat="photo in photos | orderBy:'version':true">
-    <h2>{{photo.context.custom.photo}}</h2>
+    <h2>{{ photo.context.custom.photo }}</h2>
     <a cl-href="{{photo.public_id}}" format="jpg" target="_blank">
       <cl-image public-id="{{photo.public_id}}" class="thumbnail inline" width="150" height="150" crop="fit" quality="80" format="jpg"/>
     </a>

@@ -1,0 +1,27 @@
+{
+  "name": "cloudinary_angular",
+  "version": "0.0.0",
+  "description": "Cloudinary ==========",
+  "main": "server.js",
+  "dependencies": {
+    "connect": "^2.23.0",
+    "express": "^4.6.1",
+    "morgan": "^1.1.1",
+    "path": "^0.4.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudinary/cloudinary_angular.git"
+  },
+  "author": "T",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cloudinary/cloudinary_angular/issues"
+  },
+  "homepage": "https://github.com/cloudinary/cloudinary_angular"
+}
