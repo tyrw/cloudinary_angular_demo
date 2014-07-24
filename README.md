@@ -1,5 +1,5 @@
-1) clone repo
-2) add file `app/js/config.js`:
+1. clone repo
+2. add file `app/js/config.js`:
 ```
 $.cloudinary.config({
   cloud_name: 'YOURCLOUDNAME',
