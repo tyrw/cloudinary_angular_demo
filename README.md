@@ -7,8 +7,8 @@ $.cloudinary.config({
   upload_preset: "YOURUPLOADPRESET"
 })
 ```
-3. `npm install`
-4. `cd app`
-5. `bower install`
-6. `cd ..`
-7. `node server.js`
+`npm install`
+`cd app`
+`bower install`
+`cd ..`
+`node server.js`
