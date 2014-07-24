@@ -1,5 +1,5 @@
-1. clone repo
-2. add file `app/js/config.js`:
+1) clone repo
+2) add file `app/js/config.js`:
 ```
 $.cloudinary.config({
   cloud_name: 'YOURCLOUDNAME',
@@ -7,8 +7,11 @@ $.cloudinary.config({
   upload_preset: "YOURUPLOADPRESET"
 })
 ```
-`npm install`
-`cd app`
-`bower install`
-`cd ..`
-`node server.js`
+3) Install and run
+```
+npm install
+cd app
+bower install
+cd ..
+node server.js
+```
