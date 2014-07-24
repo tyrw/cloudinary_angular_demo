@@ -1,3 +1,7 @@
+## Cloudinary demo for uploading and manipulating files
+
+Allows you to run a local instance (via node.js) that will upload to your Cloudinary account and allow you to manipulate uploaded files.
+
 1. clone repo
 2. add file `app/js/config.js`:
 ```
