@@ -14,8 +14,8 @@
   <p ng-if="photos.length === 0 || !photos">No photos were added yet.</p>
   <div class="photo" ng-repeat="photo in photos | orderBy:'version':true">
     <h2>{{ photo.context.custom.photo }}</h2>
-    <span ng-init="width = 150; height = 150; crop = 'thumb'; quality = 80; gravity = 'center'; radius = 0; angle = 0"></span>
-    <img src="http://res.cloudinary.com/eeosk/image/upload/c_{{crop}},h_{{height}},q_{{quality}},w_{{width}},g_{{gravity}},r_{{radius}},a_{{angle}}/{{photo.public_id}}.jpg">
+    <span ng-init="width = 150; height = 150; crop = 'thumb'; gravity = 'center'; radius = 0; angle = 0; effect = 'auto_contrast'"></span>
+    <img src="http://res.cloudinary.com/eeosk/image/upload/c_{{crop}},h_{{height}},w_{{width}},g_{{gravity}},e_{{effect}},r_{{radius}},a_{{angle}}/{{photo.public_id}}.jpg">
     <br>
     <form class="form-inline">
       <div class="input-group">
@@ -29,6 +29,7 @@
       <select ng-model="crop" ng-options="o for o in ['fit', 'thumb', 'scale', 'fill', 'limit', 'pad', 'crop']" class="form-control"></select>
       <select ng-model="gravity" ng-options="g for g in ['north_west', 'north', 'north_east', 'west', 'center', 'east', 'south_west', 'south', 'south_east', 'face', 'faces']" class="form-control"></select>
       <br>
+      <select ng-model="effect" ng-options="e for e in ['auto_contrast', 'contrast:-50', 'sharpen', 'auto_color', 'pixelate_faces:3', 'sepia', 'grayscale']" class="form-control"></select>
       <div class="input-group">
         <div class="input-group-addon">r</div>
         <input class="form-control" type="number" ng-model="radius">
