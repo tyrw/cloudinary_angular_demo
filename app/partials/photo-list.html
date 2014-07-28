@@ -14,9 +14,36 @@
   <p ng-if="photos.length === 0 || !photos">No photos were added yet.</p>
   <div class="photo" ng-repeat="photo in photos | orderBy:'version':true">
     <h2>{{ photo.context.custom.photo }}</h2>
+    <span ng-init="width = 150; height = 150; crop = 'thumb'; quality = 80; gravity = 'center'; radius = 0; angle = 0"></span>
+    <img src="http://res.cloudinary.com/eeosk/image/upload/c_{{crop}},h_{{height}},q_{{quality}},w_{{width}},g_{{gravity}},r_{{radius}},a_{{angle}}/{{photo.public_id}}.jpg">
+    <br>
+    <form class="form-inline">
+      <div class="input-group">
+        <div class="input-group-addon">w</div>
+        <input class="form-control" type="number" ng-model="width">
+      </div>
+      <div class="input-group">
+        <div class="input-group-addon">h</div>
+        <input class="form-control" type="number" ng-model="height">
+      </div>
+      <select ng-model="crop" ng-options="o for o in ['fit', 'thumb', 'scale', 'fill', 'limit', 'pad', 'crop']" class="form-control"></select>
+      <select ng-model="gravity" ng-options="g for g in ['north_west', 'north', 'north_east', 'west', 'center', 'east', 'south_west', 'south', 'south_east', 'face', 'faces']" class="form-control"></select>
+      <br>
+      <div class="input-group">
+        <div class="input-group-addon">r</div>
+        <input class="form-control" type="number" ng-model="radius">
+      </div>
+      <div class="input-group">
+        <div class="input-group-addon">a</div>
+        <input class="form-control" type="number" ng-model="angle">
+      </div>
+    </form>
+
+    <!--
     <a cl-href="{{photo.public_id}}" format="jpg" target="_blank">
-      <cl-image public-id="{{photo.public_id}}" class="thumbnail inline" width="150" height="150" crop="fit" quality="80" format="jpg"/>
+      <cl-image public-id="{{photo.public_id}}" class="thumbnail inline" width="{{ width }}" height="{{ height }}" crop="{{ crop }}" quality="{{ quality }}" format="jpg"/>
     </a>
+    -->
 
     <div class="less_info">
       <button class="toggle_info" style="cursor: true" ng-click="shown=true" ng-init="shown=false" ng-show="shown === false">Show transformations</button>
